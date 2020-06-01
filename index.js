@@ -5,6 +5,11 @@ const simpleGit = require('simple-git');
 const FILE_PATH = './data.json';
 
 const makeCommit = (n) => {
+  if (n === 0) {
+    console.log('PUSHED');
+    const response = simpleGit().push('origin', 'master');
+    return console.log('response', response);
+  }
   const x = random.int(0, 54);
   const y = random.int(0, 6);
   const DATE = moment()
@@ -22,9 +27,5 @@ const makeCommit = (n) => {
       .add(['./'])
       .commit(DATE, { '--date': DATE }, makeCommit.bind(this, --n));
   });
-  if (n === 0) {
-    console.log('PUSHED');
-    return simpleGit().push('origin', 'master');
-  }
 };
 makeCommit(20);
