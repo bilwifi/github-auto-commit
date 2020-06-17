@@ -6,8 +6,7 @@ const FILE_PATH = './data.json';
 
 const makeCommit = (n) => {
   if (n === 0) {
-    simpleGit().push('origin', 'master', { '--no-rebase': null });
-    return console.log('PUSHED');
+    return simpleGit().push('origin', 'master', { '--no-rebase': null });
   }
   const x = random.int(0, 54);
   const y = random.int(0, 6);
