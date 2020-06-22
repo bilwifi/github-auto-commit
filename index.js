@@ -5,10 +5,9 @@ const simpleGit = require('simple-git');
 const FILE_PATH = './data.json';
 
 const makeCommit = async (n) => {
-  if (n % 10 === 0 && n === 0) {
+  if ((n !== 40 && n % 10 === 0) || n === 0) {
     console.log('PUSHED');
-    const response = await simpleGit().push('origin', 'master');
-    return console.log('response', response);
+    return await simpleGit().push('origin', 'master');
   }
   const x = random.int(0, 54);
   const y = random.int(0, 6);
