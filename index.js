@@ -5,7 +5,7 @@ const simpleGit = require('simple-git');
 const FILE_PATH = './data.json';
 
 const makeCommit = async (n) => {
-  if (n % 10 === 0 || n === 0) {
+  if (n % 50 === 0 || n === 0) {
     await simpleGit().push('origin', 'master');
     console.log('PUSHED');
   }
