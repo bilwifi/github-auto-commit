@@ -6,6 +6,7 @@ const FILE_PATH = './data.json';
 
 const makeCommit = async (n) => {
   if (n % 50 === 0 || n === 0) {
+    let 
     await simpleGit().push('public', 'master');
     console.log('💅 50 COMMITS PUSHED ON GITHUB 🥰');
   }
