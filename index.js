@@ -24,4 +24,4 @@ const makeCommit = (n) => {
       .commit(DATE, { '--date': DATE }, makeCommit.bind(this, --n));
   });
 };
-makeCommit(20);
+makeCommit(200);
