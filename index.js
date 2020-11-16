@@ -9,7 +9,7 @@ const makeCommit = async (n) => {
     await simpleGit().push('origin', 'master');
     console.log('💅 50 COMMITS PUSHED ON GITHUB 🥰');
   }
-  const x = random.int(40, 54);
+  const x = random.int(0, 54);
   const y = random.int(0, 6);
   const DATE = moment()
     .subtract(1, 'y')
@@ -20,7 +20,7 @@ const makeCommit = async (n) => {
   const data = {
     date: DATE,
   };
-  console.dir(DATE);
+  console.dir(DATE, n+'e Commit');
   jsonFile.writeFile(FILE_PATH, data, () => {
     simpleGit()
       .add(['./'])
