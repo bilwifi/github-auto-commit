@@ -20,11 +20,11 @@ const makeCommit = async (n) => {
   const data = {
     date: DATE,
   };
-  console.dir(new Date());
+  console.dir(DATE);
   jsonFile.writeFile(FILE_PATH, data, () => {
     simpleGit()
       .add(['./'])
-      .commit(DATE, { '--date': '2021-07-22' }, makeCommit.bind(this, ++n));
+      .commit(DATE, { '--date': DATE }, makeCommit.bind(this, ++n));
   });
 };
 makeCommit(1);
