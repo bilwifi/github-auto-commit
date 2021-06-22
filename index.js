@@ -9,7 +9,7 @@ const makeCommit = async (n) => {
   if (n % 50 === 0 || n === 0) {
     foo += 1;
     await simpleGit().push('public', 'master');
-    console.log('💅 50 COMMITS PUSHED ON GITHUB 🥰 ', ');
+    console.log('💅 50 COMMITS PUSHED ON GITHUB 🥰 ', );
   }
   const x = random.int(0, 54);
   const y = random.int(0, 6);
