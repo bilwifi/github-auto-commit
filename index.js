@@ -9,7 +9,7 @@ const makeCommit = async (n) => {
     await simpleGit().push('origin', 'master');
     console.log('PUSHED');
   }
-  const x = random.int(0, 10);
+  const x = random.int(40, 54);
   const y = random.int(0, 6);
   const DATE = moment()
     .subtract(1, 'y')
