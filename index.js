@@ -5,14 +5,14 @@ const simpleGit = require('simple-git');
 const FILE_PATH = './data.json';
 
 const makeCommit = async (n) => {
-  if ((n !== 40 && n % 5 === 0) || n === 0) {
+  if (n % 10 === 0 || n === 0) {
     await simpleGit().push('origin', 'master');
     console.log('PUSHED');
   }
   const x = random.int(0, 54);
   const y = random.int(0, 6);
   const DATE = moment()
-    .subtract(2, 'y')
+    .subtract(1, 'y')
     .add(1, 'd')
     .add(x, 'w')
     .add(y, 'd')
@@ -24,7 +24,7 @@ const makeCommit = async (n) => {
   jsonFile.writeFile(FILE_PATH, data, () => {
     simpleGit()
       .add(['./'])
-      .commit(DATE, { '--date': DATE }, makeCommit.bind(this, --n));
+      .commit(DATE, { '--date': DATE }, makeCommit.bind(this, ++n));
   });
 };
-makeCommit(40);
+makeCommit(1);
